@@ -9,3 +9,4 @@ if __name__ == '__main__':
     if sys.argv[1] not in {"+": add, "-": sub, "*": mul, "/": div}:
         print("Unknown operator. Available operators: +, -, * and /\n")
         exit(1)
+    print("")
