@@ -12,6 +12,7 @@ class Square:
             raise ValueError("size must be >= 0")
         else:
             self._size = size
+
     @property
     def size(self):
         """define size as a property"""
@@ -25,6 +26,7 @@ class Square:
             raise ValueError("size must be >= 0")
         else:
             self._size = value
+
     def area(self):
         """returns the square"""
         result = self._size * self._size
