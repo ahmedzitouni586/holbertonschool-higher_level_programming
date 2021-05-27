@@ -1,11 +1,11 @@
-s   #!/usr/bin/python3
-"""This is a docstring.
-    for a class: Rectangle.
+#!/usr/bin/python3
+"""This is a docstrings.
+    for a new class: Rectangle.
 """
 
 
 class Rectangle:
-    """class to defines a rectangle"""
+    """class that defines a rectangle"""
     def __init__(self, width=0, height=0):
         self.__height = height
         self.__width = width
