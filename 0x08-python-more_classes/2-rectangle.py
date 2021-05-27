@@ -5,28 +5,32 @@
 
 
 class Rectangle:
-    '''class to define a rectangle'''
+    '''this is an empty class
+        that defines a Rectangle
+    '''
     def __init__(self, width=0, height=0):
         '''Method:
         Args:
             width: width of a Rectangle
             height: height Of a Rectangle
         '''
-        self.height = height
-        self.width = width
+        self.__height = height
+        self.__width = width
 
     @property
     def height(self):
+        '''Property for the height of the Rectangle
+        '''
         return self.__height
 
     @height.setter
     def height(self, value):
-        ''' Method:
+        '''Method:
         Args:
-            value: height of the Rectangle
-        Raises:
-            TypeError: height must be an integer
+            value: height of a Rectangle
+        raises:
             ValueError: height must be >= 0
+            TypeError: height must be an integer
         '''
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
@@ -36,8 +40,10 @@ class Rectangle:
 
     @property
     def width(self):
+        '''Property for the width of the Rectangle
+        '''
         return self.__width
-    
+
     @width.setter
     def width(self, value):
         '''Method:
@@ -50,17 +56,20 @@ class Rectangle:
         if value < 0:
             raise ValueError("width must be >= 0")
         self.__width = value
+
     def area(self):
-        '''rectangle area method
+        '''Rectangle area method.
         Returns:
-            area of the rectangle.
+            the rectangle area.
         '''
-        return self.__width * self.__height
+        return self.__height * self.__width
+
     def perimeter(self):
-        '''rectangle perimeter method
+        '''Rectangle Perimeter method.
         Returns:
-            perimeter of the rectangle.
+            the rectangle Perimeter.
         '''
-        if self.__width == 0: or self.__height == 0:
-            return 0
-        return 2 * (self.__width + self.__height)
+        if self.width == 0 or self.height == 0:
+           
+ return 0
+        return 2*(self.__height + self.__width)
