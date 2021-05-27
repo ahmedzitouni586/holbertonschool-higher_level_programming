@@ -26,7 +26,7 @@ class Rectangle:
         Return:
         the widith with his value
         """
-        if type(width) is not int:
+        if not instance(value, int):
             raise ValueError("width must be an integer")
         if value < 0:
             raise ValueError("width must be >= 0")
@@ -46,7 +46,7 @@ class Rectangle:
         ValueError("height must be >= 0")
         return: the height with his value
         """
-        if type(height) is not int:
+        if not instance(value, int):
             raise TypeError("height must be an integer")
         if value < 0:
             raise ValueError("height must be >= 0")
