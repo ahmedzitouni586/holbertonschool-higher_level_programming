@@ -1,11 +1,11 @@
 #!/usr/bin/python3
-"""This is a docstring.
-    for a class: Rectangle.
+"""This is a docstrings.
+    for a new class: Rectangle.
 """
 
 
 class Rectangle:
-    """class to defines a rectangle"""
+    """class that defines a rectangle"""
     number_of_instances = 0
     print_symbol = "#"
 
@@ -64,7 +64,6 @@ class Rectangle:
         Returns:
             the rectangle Perimeter.
         '''
-        if self.widt
-h == 0 or self.height == 0:
+        if self.width == 0 or self.height == 0:
             return 0
         return 2*(self.__height + self.__width)
