@@ -6,6 +6,7 @@ from typing import List
 
 
 class MyList(List):
-    """print the list, but sorted"""
+    """ class myist"""
     def print_sorted(self):
+        """print sorted list"""
         print(sorted(self))
