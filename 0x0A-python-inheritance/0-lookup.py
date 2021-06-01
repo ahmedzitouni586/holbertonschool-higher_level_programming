@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""holberton module"""
+"""
+holberton module
+"""
 
 
 def lookup(obj):
