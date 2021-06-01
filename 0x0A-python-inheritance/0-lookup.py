@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 """
-holberton module
+This module add a lookup function
 """
 
 
 def lookup(obj):
-    """function that returns a list of attributes and methods"""
+    """ return methods and attribute of obj """
     return dir(object)
