@@ -5,8 +5,8 @@ from typing import List
 """holberton module"""
 
 
-class MyList(List):
-    """ class myist"""
+class MyList(list):
+    """class MyList"""
     def print_sorted(self):
-        """print sorted list"""
+        """print a sorted list"""
         print(sorted(self))
