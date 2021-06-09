@@ -13,7 +13,7 @@ class Square(Rectangle):
         super().__init__(size, size, x, y, id)
 
     def __str__(self):
-        """ return square details """
+        """ return str() and print() representation of square object """
         S = "[Square]"
         S += "({}) {}/{}".format(self.id, self.x, self.y)
         S += " - {}".format(self.width)
