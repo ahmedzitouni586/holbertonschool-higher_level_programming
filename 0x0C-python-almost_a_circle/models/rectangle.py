@@ -90,7 +90,7 @@ class Rectangle(Base):
         R += "- {}/{}".format(self.__width, self.__height)
         return R
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """ assigns an argument to each attribute """
         if args and len(args) != 0:
             try:
