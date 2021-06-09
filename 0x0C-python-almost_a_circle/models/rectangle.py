@@ -94,27 +94,27 @@ class Rectangle(Base):
         """ assigns an argument to each attribute """
         if args and len(args) != 0:
             try:
-                if args[0] is not None:
+                if args[0] != None:
                     self.id = args[0]
             except IndexError:
                 return
             try:
-                if args[1] is not None:
+                if args[1] != None:
                     self.width = args[1]
             except IndexError:
                 return
             try:
-                if args[2] is not None:
+                if args[2] != None:
                     self.height = args[2]
             except IndexError:
                 return
             try:
-                if args[3] is not None:
+                if args[3] != None:
                     self.x = args[3]
             except IndexError:
                 return
             try:
-                if args[4] is not None:
+                if args[4] != None:
                     self.x = args[4]
             except IndexError:
                 return
