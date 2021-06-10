@@ -53,15 +53,16 @@ class Base:
         dummy.update(**dictionary)
         return dummy
 
-    @classmethod
-    def save_to_file(cls, list_objs):
-        """ write json string representation of list_objs """
-        fname = cls.__name__ + ".json"
-        with open(fname, "w") as ff:
-            if list_objs is None:
-                ff.write("[]")
-            else:
-                list = []
-                for obj in list_objs:
-                    list.append(obj.to_dictionary())
-                ff.write(cls.to_json_string(list))
+     @classmethod
+    def load_from_file(cls):
+        """ return a list of instances """
+        fname = str(cls.__name__) + ".json"
+        try:
+            with open(fname, "r") as ff:
+                list = Base.from_json_string(ff.read())
+                ll = []
+                for e in list:
+                    ll.append(cls.create(**e))
+                return ll
+        except Exception:
+            return []
