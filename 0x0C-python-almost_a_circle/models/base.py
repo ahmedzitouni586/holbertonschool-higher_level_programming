@@ -52,3 +52,16 @@ class Base:
             dummy = cls(9, 9)
         dummy.update(**dictionary)
         return dummy
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        """ write json string representation of list_objs """
+        fname = cls.__name__ + ".json"
+        with open(fname, "w") as ff:
+            if list_objs is None:
+                ff.write("[]")
+            else:
+                list = []
+                for obj in list_objs:
+                    list.append(obj.to_dictionary())
+                ff.write(cls.to_json_string(list))
