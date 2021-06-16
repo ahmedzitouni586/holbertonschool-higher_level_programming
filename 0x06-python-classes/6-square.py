@@ -38,17 +38,21 @@ class Square:
            type(value[0]) is not int or value[0] < 0 or \
            type(value[1]) is not int or value[1] < 0:
            raise TypeError("position must be a tuple of 2 positive integers")
-        self.__position = value
+        else:
+            self.__position = value
 
     def area(self):
         """ returns the area of the square """
         return self.__size**2
 
     def my_print(self):
-        """ draw square """
-        for i in range(0, self.__size):
-            for j in range(self.__size):
-                print("#", end="")
-            print()
-        if self.__size == 0:
-            print()
+        """ Prints the square """
+        if self.size > 0:
+            if self.position[1] > 0:
+                print("\n" * self.position[1], end="")
+            for i in range(self.size):
+                if self.position[0] > 0:
+                    print(" " * self.position[0], end="")
+                print("#" * self.size)
+        else:
+            print(end="\n")
