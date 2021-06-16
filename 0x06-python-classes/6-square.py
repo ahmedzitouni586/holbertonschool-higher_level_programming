@@ -4,13 +4,10 @@
 
 class Square:
     """ class Square """
-    def __init__(self, size=0):
+    def __init__(self, size=0, position=(0, 0)):
         """ class initialization """
         self.__size = size
-        if type(size) is not int:
-            raise TypeError("size must be an integer")
-        if size < 0:
-            raise ValueError("size must be >= 0")
+        self.position = position
 
     @property
     def size(self):
@@ -28,20 +25,12 @@ class Square:
 
     @property
     def position(self):
-        """get: __position
-        Returns:
-            The position of the square in 2D space
-        """
+        """ position getter """
         return self.__position
 
     @position.setter
     def position(self, value):
-        """set:__position
-        Args:
-            value (tuple): position of the square in 2D space
-        Returns:
-            None
-        """
+        """ position setter """
         if type(value) is not tuple or len(value) != 2 or \
            type(value[0]) is not int or value[0] < 0 or \
            type(value[1]) is not int or value[1] < 0:
@@ -54,11 +43,7 @@ class Square:
         return self.__size**2
 
     def my_print(self):
-        """Prints the square:
-        if 'size' is equal to 0, print an empty line
-        'position' should be use by using space -
-        Don’t fill lines by spaces when position[1] > 0
-        """
+        """ Prints the square """
         if self.size > 0:
             if self.position[1] > 0:
                 print("\n" * self.position[1], end="")
