@@ -1,17 +1,18 @@
 #!/usr/bin/python3
-"""
-Holberton module
-"""
-
-
 def text_indentation(text):
-    """prints a text with 2 new lines after
-    each of these characters: ., ? ;"""
+    """Prints a text with 2 new lines after ., ?, and :
+    """
     if type(text) is not str:
         raise TypeError("text must be a string")
-    else:
-        new = text
-        new = new.replace('.', '.\n\n')
-        new = new.replace(':', ':\n\n')
-        new = new.replace('?', '?\n\n')
-        print(new.strip())
+    delimiter = ['.', '?', ':']
+    s = ""
+
+    for c in text:
+        s += c
+        if c in delimiter:
+            print(s.strip())
+            print()
+            s = ""
+    print(s.strip(), end='')
+    if text is "\n":
+        print()
