@@ -1,5 +1,4 @@
 #!/usr/bin/node
-
 let aray = ['C is fun','Python is cool','JavaScript is amazing'];
 let i = 0;
 

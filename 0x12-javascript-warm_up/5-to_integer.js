@@ -1,5 +1,4 @@
 #!/usr/bin/node
-
 let arg = process.argv;
 if (arg[2] === null) {
     console.log("Not a number")
