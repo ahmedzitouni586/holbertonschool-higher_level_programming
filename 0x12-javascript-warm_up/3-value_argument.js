@@ -4,5 +4,5 @@ if (arg === undefined) {
     console.log("No argument")
 }
 else {
-    console.log(arg)
+    console.log(arg[2])
 }
