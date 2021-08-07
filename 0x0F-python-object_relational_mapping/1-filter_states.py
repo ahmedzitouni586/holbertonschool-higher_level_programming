@@ -12,7 +12,7 @@ if __name__ == "__main__":
         db.execute("SELECT *\
                    FROM states\
                    WHERE name\
-                   LIKE BINARY 'N%'\
+                   LIKE 'N%'\
                    ORDER BY id ASC")
         table = db.fetchall()
         for data in table:
