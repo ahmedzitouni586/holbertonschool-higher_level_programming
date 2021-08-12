@@ -16,7 +16,8 @@ def main():
                          port=3306)
     curss = db.cursor()
     curss.execute("SELECT cities.name FROM cities JOIN states ON\
-    cities.state_id = states.id AND states.name = %s ORDER BY cities.id ASC")
+    cities.state_id = states.id AND states.name = %s ORDER BY cities.id ASC"
+    .format(argv[4]))
     table = curss.fetchall()
     i = [row[0] for row in table]
     together = ", ".join(i)
