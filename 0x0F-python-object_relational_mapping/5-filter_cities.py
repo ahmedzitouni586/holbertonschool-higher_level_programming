@@ -15,9 +15,11 @@ def main():
                          db=argv[3],
                          port=3306)
     curss = db.cursor()
-    curss.execute("SELECT cities.name FROM cities JOIN states ON\
+    s = (argv[4], )
+    c = "SELECT cities.name FROM cities JOIN states ON\
     cities.state_id = states.id AND states.name = %s ORDER BY cities.id ASC"
-    .format(argv[4]))
+
+    curss.execute(s, c)
     table = curss.fetchall()
     i = [row[0] for row in table]
     together = ", ".join(i)
