@@ -19,7 +19,7 @@ def main():
     c = "SELECT cities.name FROM cities JOIN states ON\
     cities.state_id = states.id AND states.name = %s ORDER BY cities.id ASC"
 
-    curss.execute(s, c)
+    curss.execute(c, s)
     table = curss.fetchall()
     i = [row[0] for row in table]
     together = ", ".join(i)
