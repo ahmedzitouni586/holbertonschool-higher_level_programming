@@ -3,6 +3,7 @@
  takes in an argument and displays all values in the states table
 """
 
+
 def main():
     import MySQLdb
     from sys import argv
