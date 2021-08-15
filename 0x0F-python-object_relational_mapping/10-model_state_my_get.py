@@ -2,23 +2,27 @@
 """ print the state id of database hbtn_0e_6_usa"""
 
 
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
-from sqlalchemy.orm.session import Session
-import model_state
+from sys import argv
 from model_state import Base, State
-import sys
+from sqlalchemy.orm import Session
+from sqlalchemy import (create_engine)
 
-if __name__ == '__main__':
-    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'
-                           .format(sys.argv[1], sys.argv[2],
-                                   sys.argv[3]), pool_pre_ping=True)
+if __name__ == "__main__":
+
+    user = argv[1]
+    password = argv[2]
+    database = argv[3]
+    name = argv[4]
+
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format
+                           (user, password, database), pool_pre_ping=True)
     Base.metadata.create_all(engine)
 
     session = Session(engine)
-    query_row = session.query(State).filter_by(name=sys.argv[4]).first()
-    if query_row is not None:
-        print(query_row.id)
+    table = session.query(State).filter(State.name == name).first()
+
+    if table is not None:
+        print("{}".format(table.id))
     else:
         print("Not found")
-    session.close()
+
