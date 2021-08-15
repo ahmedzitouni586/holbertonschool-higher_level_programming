@@ -19,10 +19,10 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
 
     session = Session(engine)
-    table = session.query(State).filter(State.name == name).first()
+    state = session.query(State).filter(State.name == name).first()
 
-    if table is not None:
-        print("{}".format(table.id))
+    if state is not None:
+        print("{}".format(state.id))
     else:
         print("Not found")
 
