@@ -7,7 +7,7 @@ from sqlalchemy import (create_engine)
 from sqlalchemy.orm import sessionmaker
 import sys
 
-def list():
+def list_all():
     """ list the states """
     engine = create_engine("mysql+mysqldb://{}:{}@localhost/{}"
                            .format(sys.argv[1], sys.argv[2], sys.argv[3])
@@ -20,4 +20,4 @@ def list():
             print("{}: {}".format(state.id, state.name))
 
 if __name__ == '__main__':
-    list()
+    list_all()
