@@ -5,20 +5,16 @@
 if __name__ == '__main__':
     import MySQLdb
     from sys import argv
-
-
-    username = argv[1];
-    password = argv[2];
-    dbname = argv[3];
-
-
+    username = argv[1]
+    password = argv[2]
+    dbname = argv[3]
     # open database connection
     db = MySQLdb.connect(
-        host ="localhost",
-        user =username,
-        passwd =password,
-        db =dbname,
-        port =3306
+        host="localhost",
+        user=username,
+        passwd=password,
+        db=dbname,
+        port=3306
     )
     # prepare a cursor object using cursor()
     cursor = db.cursor()
