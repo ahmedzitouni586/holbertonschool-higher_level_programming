@@ -7,5 +7,5 @@ import requests
 from sys import argv
 if __name__ == '__main__':
     respp = requests.get(argv[1])
-    id  = respp.headers.get('X-Request-Id')
+    id = respp.headers.get('X-Request-Id')
     print(id)
