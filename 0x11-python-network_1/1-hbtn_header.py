@@ -9,4 +9,4 @@ import urllib.request
 from sys import argv
 with urllib.request.urlopen(argv[1]) as response:
     request_id = response.getheader("X-Request-Id")
-    print(request_id)
+print(request_id)
