@@ -3,9 +3,8 @@ const fs = require('fs');
 const file = process.argv[2];
 const str = process.argv[3];
 
-fs.readFile(file, str,'utf8', (err, data) => {
-  if (err) {
-    console.log(err);
-    return;
-  }
-});
+fs.writeFile(file, str,'utf8', function (err) {
+    if (err) {
+      console.log(err);
+    }
+  });
